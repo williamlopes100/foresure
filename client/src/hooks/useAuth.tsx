@@ -37,9 +37,17 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [authState, setAuthState] = useState(checkAuthSync);
 
     const logout = useCallback(() => {
-        localStorage.removeItem('authToken');
-        localStorage.removeItem('user');
-        setAuthState({ isAuthenticated: false, user: null });
+        // Clear all storage
+        localStorage.clear();
+        sessionStorage.clear();
+
+        // Clear all cookies
+        document.cookie.split(';').forEach((c) => {
+            document.cookie = c.trim().split('=')[0] + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+        });
+
+        // Hard navigate to login — forces a full page reload with zero stale state
+        window.location.replace('/');
     }, []);
 
     const refreshAuth = useCallback(() => {

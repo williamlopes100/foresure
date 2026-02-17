@@ -69,7 +69,7 @@ export const NavAccountMenu = ({
             </div>
 
             <div className="pt-1.5 pb-1.5">
-                <NavAccountCardMenuItem label="Sign out" icon={LogOut01} onClick={() => { onSignOut?.(); window.location.href = '/'; }} />
+                <NavAccountCardMenuItem label="Sign out" icon={LogOut01} onClick={() => onSignOut?.()} />
             </div>
         </AriaDialog>
     );
