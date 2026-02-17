@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { authRoutes } from './routes/auth.js';
@@ -10,8 +11,9 @@ import { initDatabase } from './utils/init-db.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config({ path: path.resolve(__dirname, '../../.env'), quiet: true });
+const envPath = path.resolve(__dirname, '../../.env');
+if (fs.existsSync(envPath)) {
+  dotenv.config({ path: envPath, quiet: true });
 }
 
 const app = express();
@@ -37,7 +39,7 @@ app.get('/api/health', (_, res) => {
 if (process.env.NODE_ENV === 'production') {
   const clientPath = path.resolve(__dirname, '../../dist/client');
   app.use(express.static(clientPath));
-  app.get('*', (_, res) => {
+  app.get('{*path}', (_, res) => {
     res.sendFile(path.join(clientPath, 'index.html'));
   });
 }
