@@ -146,8 +146,8 @@ export const ForgotPasswordPage = () => {
                     <div className="relative">
                         <BackgroundPattern pattern="grid" className="absolute top-1/2 left-1/2 z-0 hidden -translate-x-1/2 -translate-y-1/2 md:block" />
                         <BackgroundPattern pattern="grid" size="md" className="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 md:hidden" />
-                        <UntitledLogoMinimal className="relative z-10 size-12 max-md:hidden" />
-                        <UntitledLogoMinimal className="relative z-10 size-10 md:hidden" />
+                        <UntitledLogoMinimal className="relative z-10 w-36 max-md:hidden" />
+                        <UntitledLogoMinimal className="relative z-10 w-28 md:hidden" />
                     </div>
                     <div className="z-10 flex flex-col gap-2 md:gap-3">
                         <h1 className="text-display-xs font-semibold text-primary md:text-display-sm">{stepConfig[step].title}</h1>

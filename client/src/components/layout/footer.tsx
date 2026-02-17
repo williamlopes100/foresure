@@ -7,7 +7,7 @@ export const Footer = () => {
                 <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
                     {/* Logo and Copyright */}
                     <div className="flex flex-col gap-4">
-                        <UntitledLogoMinimal className="size-8" />
+                        <UntitledLogoMinimal className="w-28" />
                         <p className="text-sm text-tertiary">
                             © 2024 Untitled UI. All rights reserved.
                         </p>

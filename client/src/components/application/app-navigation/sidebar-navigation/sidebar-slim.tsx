@@ -59,7 +59,7 @@ export const SidebarNavigationSlim = ({ activeUrl, items, footerItems = [], hide
                 )}
             >
                 <div className="flex justify-center px-3">
-                    <UntitledLogoMinimal className="size-8" />
+                    <UntitledLogoMinimal className="w-24" />
                 </div>
 
                 <ul className="mt-4 flex flex-col gap-0.5 px-3">
