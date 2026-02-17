@@ -6,6 +6,7 @@ import { SignupCardSeparated } from "@/components/shared-assets/login/signup-car
 import { DashboardPage } from "@/pages/dashboard-page";
 import { ForeclosureForm } from "@/pages/foreclosure-form";
 import { NotFound } from "@/pages/not-found";
+import { AuthProvider } from "@/hooks/useAuth";
 import { RouteProvider } from "@/providers/router-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
@@ -13,17 +14,19 @@ import "@/styles/globals.css";
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
         <ThemeProvider>
-            <BrowserRouter>
-                <RouteProvider>
-                    <Routes>
+            <AuthProvider>
+                <BrowserRouter>
+                    <RouteProvider>
+                        <Routes>
                         <Route path="/" element={<LoginCardSeparated />} />
                         <Route path="/signup" element={<SignupCardSeparated />} />
                         <Route path="/dashboard" element={<DashboardPage />} />
                         <Route path="/foreclosure-form" element={<ForeclosureForm />} />
                         <Route path="*" element={<NotFound />} />
-                    </Routes>
-                </RouteProvider>
-            </BrowserRouter>
+                        </Routes>
+                    </RouteProvider>
+                </BrowserRouter>
+            </AuthProvider>
         </ThemeProvider>
     </StrictMode>,
 );

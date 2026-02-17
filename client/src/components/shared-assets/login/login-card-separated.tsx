@@ -7,6 +7,7 @@ import { Input } from "@/components/base/input/input";
 import { UntitledLogoMinimal } from "@/components/foundations/logo/untitledui-logo-minimal";
 import { BackgroundPattern } from "@/components/shared-assets/background-patterns";
 import { useNavigate } from "react-router";
+import { useAuth } from "@/hooks/useAuth";
 
 interface LoginResponse {
     message: string;
@@ -25,6 +26,7 @@ export const LoginCardSeparated = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const navigate = useNavigate();
+    const { refreshAuth } = useAuth();
 
     const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -50,6 +52,7 @@ export const LoginCardSeparated = () => {
                 // Store token in localStorage
                 localStorage.setItem('authToken', data.token);
                 localStorage.setItem('user', JSON.stringify(data.user));
+                refreshAuth();
                 navigate('/dashboard');
             } else {
                 setError(data.error || 'Login failed');
