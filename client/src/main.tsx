@@ -5,6 +5,7 @@ import { LoginCardSeparated } from "@/components/shared-assets/login/login-card-
 import { SignupCardSeparated } from "@/components/shared-assets/login/signup-card-separated";
 import { DashboardPage } from "@/pages/dashboard-page";
 import { ForeclosureForm } from "@/pages/foreclosure-form";
+import { ForgotPasswordPage } from "@/pages/forgot-password";
 import { NotFound } from "@/pages/not-found";
 import { ProtectedRoute } from "@/components/auth/protected-route";
 import { AuthProvider } from "@/hooks/useAuth";
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")!).render(
                         <Routes>
                             <Route path="/" element={<LoginCardSeparated />} />
                             <Route path="/signup" element={<SignupCardSeparated />} />
+                            <Route path="/forgot-password" element={<ForgotPasswordPage />} />
                             <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
                             <Route path="/foreclosure-form" element={<ProtectedRoute><ForeclosureForm /></ProtectedRoute>} />
                             <Route path="*" element={<NotFound />} />

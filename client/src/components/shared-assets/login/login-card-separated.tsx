@@ -105,7 +105,7 @@ export const LoginCardSeparated = () => {
                     <div className="flex items-center">
                         <Checkbox label="Remember for 30 days" name="remember" />
 
-                        <Button color="link-color" size="md" href="#" className="ml-auto">
+                        <Button color="link-color" size="md" href="/forgot-password" className="ml-auto">
                             Forgot password
                         </Button>
                     </div>
