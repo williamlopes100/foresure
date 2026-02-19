@@ -1,7 +1,7 @@
 import type { FC, HTMLAttributes } from "react";
 import { useCallback, useEffect, useRef } from "react";
 import type { Placement } from "@react-types/overlays";
-import { ChevronSelectorVertical, LogOut01 } from "@untitledui/icons";
+import { ChevronSelectorVertical, LogOut01, Settings01 } from "@untitledui/icons";
 import { useFocusManager } from "react-aria";
 import type { DialogProps as AriaDialogProps } from "react-aria-components";
 import { Button as AriaButton, Dialog as AriaDialog, DialogTrigger as AriaDialogTrigger, Popover as AriaPopover } from "react-aria-components";
@@ -69,6 +69,7 @@ export const NavAccountMenu = ({
             </div>
 
             <div className="pt-1.5 pb-1.5">
+                <NavAccountCardMenuItem label="Settings" icon={Settings01} onClick={() => { window.location.href = '/settings'; }} />
                 <NavAccountCardMenuItem label="Sign out" icon={LogOut01} onClick={() => onSignOut?.()} />
             </div>
         </AriaDialog>

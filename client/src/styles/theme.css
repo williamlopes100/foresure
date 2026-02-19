@@ -90,6 +90,7 @@
     /* ANIMATIONS */
     --animate-marquee: marquee 60s linear infinite;
     --animate-caret-blink: caret-blink 1s infinite;
+    --animate-shimmer: shimmer 2s ease-in-out infinite;
 
     @keyframes marquee {
         0% {
@@ -108,6 +109,15 @@
         51%,
         100% {
             opacity: 0;
+        }
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: 200% 0;
+        }
+        100% {
+            background-position: -200% 0;
         }
     }
 

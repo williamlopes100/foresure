@@ -1,5 +1,4 @@
-import { LogOut01 } from "@untitledui/icons";
-import { Plus } from "@untitledui/icons";
+import { LogOut01, Plus } from "@untitledui/icons";
 import { EmptyState } from "@/components/application/empty-state/empty-state";
 import { Button } from "@/components/base/buttons/button";
 import { HeaderNavigationBase } from "@/components/application/app-navigation/header-navigation";
